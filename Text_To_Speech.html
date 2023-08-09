@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text to Speech</title>
+</head>
+<body>
+    <h1>Text to Speech Converter</h1>
+    <textarea id="textInput" rows="4" cols="50" placeholder="Enter text here..."></textarea>
+    <button id="submitBtn">Submit</button>
+
+    <script>
+        const submitBtn = document.getElementById("submitBtn");
+        const textInput = document.getElementById("textInput");
+
+        submitBtn.addEventListener("click", () => {
+            const text = textInput.value;
+            if (text) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                window.speechSynthesis.speak(utterance);
+            }
+        });
+    </script>
+</body>
+</html>
